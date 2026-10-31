@@ -4,6 +4,7 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
+    "prebuild": "test -x node_modules/.bin/vite || npm ci --include=dev",
     "build": "vite build",
     "sitemap": "node scripts/generate-sitemap.mjs",
     "seed:build": "node studio/seed/build-seed.mjs",
@@ -84,6 +85,9 @@
     "react-dom": {
       "optional": true
     }
+  },
+  "overrides": {
+    "tslib": "2.8.1"
   },
   "pnpm": {
     "overrides": {
