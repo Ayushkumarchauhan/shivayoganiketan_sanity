@@ -1,0 +1,99 @@
+/* -------------------------------------------------------
+   Only the font families + weights ACTUALLY used in the app
+   are requested here. Trimmed from 6 families / dozens of
+   weights down to what the components reference:
+     • Marcellus            – 400 (135 uses)
+     • Lato                 – 400, 700 (Regular / Medium→400 / SemiBold→700)
+     • Playfair Display     – italic 400, 500 (only italics are used)
+   Removed entirely (0 uses): Urbanist, Neuton, Tenor Sans.
+   `display=swap` keeps text visible immediately using a
+   fallback while the webfont loads (no invisible-text delay).
+------------------------------------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Marcellus&family=Lato:wght@400;700&family=Playfair+Display:ital,wght@1,400;1,500&display=swap');
+
+/* -------------------------------------------------------
+   Map Figma-exported font-family names → real Google Fonts
+   The Tailwind arbitrary-value classes embed the Figma name
+   directly in the class string, e.g.
+     font-['Marcellus:Regular',sans-serif]
+   These attribute-selector overrides fix the font-family so
+   the correct typeface is displayed.
+------------------------------------------------------- */
+
+/* Marcellus Regular */
+[class*="'Marcellus:Regular'"] {
+  font-family: 'Marcellus', serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+/* Playfair Display – Italic */
+[class*="'Playfair_Display:Italic'"] {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic !important;
+}
+
+/* Playfair Display – Medium Italic (must come after Italic rule) */
+[class*="'Playfair_Display:Medium_Italic'"] {
+  font-family: 'Playfair Display', serif !important;
+  font-style: italic !important;
+  font-weight: 500 !important;
+}
+
+/* Playfair Display – Medium */
+[class*="'Playfair_Display:Medium',"] {
+  font-family: 'Playfair Display', serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+/* Lato – Regular */
+[class*="'Lato:Regular'"] {
+  font-family: 'Lato', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+/* Lato – Medium (Lato has no 500, so use 400) */
+[class*="'Lato:Medium'"] {
+  font-family: 'Lato', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+/* Lato – SemiBold (use 700 as closest) */
+[class*="'Lato:SemiBold'"] {
+  font-family: 'Lato', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+}
+
+/* Urbanist – Medium */
+[class*="'Urbanist:Medium'"] {
+  font-family: 'Urbanist', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 500 !important;
+}
+
+/* Neuton – Regular */
+[class*="'Neuton:Regular'"] {
+  font-family: 'Neuton', serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+/* Tenor Sans – Regular */
+[class*="'Tenor_Sans:Regular'"] {
+  font-family: 'Tenor Sans', sans-serif !important;
+  font-style: normal !important;
+  font-weight: 400 !important;
+}
+
+/* Hide scrollbar utility used in retreat carousel */
+.hide-scrollbar {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}

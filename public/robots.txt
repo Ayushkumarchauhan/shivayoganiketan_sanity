@@ -1,0 +1,7 @@
+# Shiva Yoga Niketan — robots.txt
+User-agent: *
+Allow: /
+# Utility pages (/thank-you, 404) are kept out of search with <meta name="robots" content="noindex">.
+# Do NOT Disallow them here — crawlers must be able to fetch the page to see the noindex tag.
+
+Sitemap: https://www.shivayoganiketan.com/sitemap.xml
