@@ -52,7 +52,7 @@ export const SITE = {
   // ── Form delivery ──
   // Free Web3Forms access key (https://web3forms.com → enter your email → copy the key).
   // While this is a placeholder, forms run in DEMO mode (they validate + show success but send nothing).
-  web3formsKey: "YOUR_WEB3FORMS_ACCESS_KEY",
+  web3formsKey: "6ee97eab-93a1-4765-a235-551942a612b1",
 };
 
 /** True when a social URL is a real profile (not a bare placeholder homepage). */
